@@ -975,6 +975,8 @@ void CWeaponMagazined::PlaySoundShot()
 			return;
 		}
 	}
+	
+	m_sounds.PlaySound(m_sSndShotCurrent.c_str(), get_LastFP(), H_Root(), !!GetHUDmode(), false, (u8)-1);
 }
 
 void CWeaponMagazined::OnShot()
