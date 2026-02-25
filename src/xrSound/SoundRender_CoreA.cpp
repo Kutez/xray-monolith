@@ -8,6 +8,8 @@
 #include "../xrEngine/pure.h"
 #include "../xrEngine/XR_IOConsole.h"
 
+int snd_efx_overwrite = 0;
+
 namespace soundSmoothingParams {
 	float distanceBasedDelayPower = 1.f;
 	float distanceBasedDelayMinDistance = 50.f;
