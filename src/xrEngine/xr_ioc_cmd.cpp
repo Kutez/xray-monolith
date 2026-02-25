@@ -945,6 +945,8 @@ float scope_fog_sharp = 4.0f;
 int scope_2dtexactive = 0.0;
 Fvector3 ssfx_wetness_multiplier = Fvector3().set(1.0f, 0.3f, 0.0f);
 
+extern int snd_efx_overwrite;
+
 void CCC_Register()
 {
 	// General
@@ -1040,7 +1042,6 @@ void CCC_Register()
 
 	// Sound
 
-	extern int snd_efx_overwrite;
 	CMD2(CCC_Float, "snd_volume_eff", &psSoundVEffects);
 	CMD2(CCC_Float, "snd_volume_music", &psSoundVMusic);
 	CMD1(CCC_SND_Restart, "snd_restart");
