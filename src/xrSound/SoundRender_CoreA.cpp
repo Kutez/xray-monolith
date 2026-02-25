@@ -175,8 +175,7 @@ void CSoundRender_CoreA::set_listener(const CSoundRender_Environment& env)
 			A_CHK(alEffectf(effect, AL_EAXREVERB_DENSITY, env.Density));
 	}
 	if (snd_efx_overwrite > -1) {
-	load_reverb(effect, &reverbs[snd_efx_overwrite]);
-	}
+		load_reverb(effect, &reverbs[0]);}
 }
 
 void CSoundRender_CoreA::get_listener(CSoundRender_Environment& env)
