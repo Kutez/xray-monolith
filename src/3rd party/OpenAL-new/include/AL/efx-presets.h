@@ -30,7 +30,7 @@ typedef struct {
     float flRoomRolloffFactor;
     int   iDecayHFLimit;
 
-    void lerp()
+    void lerp(CSoundRender_Environment& A, CSoundRender_Environment B, float f);
 
 } EFXEAXREVERBPROPERTIES, *LPEFXEAXREVERBPROPERTIES;
 #endif
