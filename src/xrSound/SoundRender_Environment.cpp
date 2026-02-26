@@ -197,7 +197,7 @@ void CSoundRender_Environment::save(IWriter* fs)
 
 //EFXEAXREVERBPROPERTIES//////////////////////////////////////////////////////////////////////////
 
-void EFXEAXREVERBPROPERTIES::lerp(EFXEAXREVERBPROPERTIES& A, EFXEAXREVERBPROPERTIES& B, float f)
+void EFXEAXREVERBPROPERTIES::lerp(const EFXEAXREVERBPROPERTIES& A, const EFXEAXREVERBPROPERTIES& B, float f)
 {
 	float fi = 1.f - f;
 
@@ -225,9 +225,9 @@ void EFXEAXREVERBPROPERTIES::lerp(EFXEAXREVERBPROPERTIES& A, EFXEAXREVERBPROPERT
     flRoomRolloffFactor = A.flRoomRolloffFactor*fi + B.flRoomRolloffFactor*f;
     
     if (f>0.5f) {
-        iDecayHFLimit = iDecayHFLimit.B;
+        iDecayHFLimit = B.iDecayHFLimit;
     } else {
-        iDecayHFLimit = iDecayHFLimit.A;
+        iDecayHFLimit = A.iDecayHFLimit;
     }
 }
 
