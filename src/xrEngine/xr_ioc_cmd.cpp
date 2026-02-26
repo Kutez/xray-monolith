@@ -945,6 +945,11 @@ float scope_fog_sharp = 4.0f;
 int scope_2dtexactive = 0.0;
 Fvector3 ssfx_wetness_multiplier = Fvector3().set(1.0f, 0.3f, 0.0f);
 
+extern int snd_efx_overwrite;
+extern int efx_overwrite_lerp_preset_A;
+extern int efx_overwrite_lerp_preset_B;
+extern float efx_overwrite_lerp_alpha;
+
 void CCC_Register()
 {
 	// General
