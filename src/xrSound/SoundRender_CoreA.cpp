@@ -182,8 +182,11 @@ void CSoundRender_CoreA::set_listener(const CSoundRender_Environment& env)
 		load_reverb(effect, &reverbs[snd_efx_overwrite]);
     }
     else {
-        if (efx_overwrite_lerp_preset_A > -1) && (efx_overwrite_lerp_preset_B>-1) {
-            load_reverb(effect, &reverbs[efx_overwrite_lerp_preset_A]:lerp(&reverbs[efx_overwrite_lerp_preset_A],&reverbs[efx_overwrite_lerp_preset_B],efx_overwrite_lerp_alpha));
+        if (efx_overwrite_lerp_preset_A > -1 && efx_overwrite_lerp_preset_B>-1) {
+            // load_reverb(effect, &reverbs[efx_overwrite_lerp_preset_A].lerp(&reverbs[efx_overwrite_lerp_preset_A], &reverbs[efx_overwrite_lerp_preset_B], efx_overwrite_lerp_alpha));
+                EFXEAXREVERBPROPERTIES blended;
+                blended.lerp(reverbs[efx_overwrite_lerp_preset_A], reverbs[efx_overwrite_lerp_preset_B], efx_overwrite_lerp_alpha);
+                load_reverb(effect, &blended);
         }
     }
 } 

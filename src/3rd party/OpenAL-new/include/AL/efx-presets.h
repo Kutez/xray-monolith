@@ -5,7 +5,7 @@
 
 #ifndef EFXEAXREVERBPROPERTIES_DEFINED
 #define EFXEAXREVERBPROPERTIES_DEFINED
-typedef struct {
+typedef struct EFXEAXREVERBPROPERTIES_s {
     float flDensity;
     float flDiffusion;
     float flGain;
@@ -30,12 +30,13 @@ typedef struct {
     float flRoomRolloffFactor;
     int   iDecayHFLimit;
 
+    void lerp(EFXEAXREVERBPROPERTIES_s& A, EFXEAXREVERBPROPERTIES_s& B, float f);
+
 } EFXEAXREVERBPROPERTIES, *LPEFXEAXREVERBPROPERTIES;
-
-
-EFXEAXREVERBPROPERTIES lerp(const EFXEAXREVERBPROPERTIES& A, const EFXEAXREVERBPROPERTIES& B, float f);
-
 #endif
+
+
+
 /* Default Presets */
 
 #define EFX_REVERB_PRESET_GENERIC \
