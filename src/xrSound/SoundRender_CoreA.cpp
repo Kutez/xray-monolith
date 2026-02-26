@@ -7,6 +7,7 @@
 
 #include "../xrEngine/pure.h"
 #include "../xrEngine/XR_IOConsole.h"
+#include <AL/efx-presets.h>
 
 int snd_efx_overwrite = 0;
 
