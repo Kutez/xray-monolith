@@ -30,11 +30,12 @@ typedef struct {
     float flRoomRolloffFactor;
     int   iDecayHFLimit;
 
-    void lerp(CSoundRender_Environment& A, CSoundRender_Environment B, float f);
-
 } EFXEAXREVERBPROPERTIES, *LPEFXEAXREVERBPROPERTIES;
-#endif
 
+
+EFXEAXREVERBPROPERTIES lerp(const EFXEAXREVERBPROPERTIES& A, const EFXEAXREVERBPROPERTIES& B, float f);
+
+#endif
 /* Default Presets */
 
 #define EFX_REVERB_PRESET_GENERIC \
