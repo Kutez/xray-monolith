@@ -10,6 +10,9 @@
 #include <AL/efx-presets.h>
 
 int snd_efx_overwrite = 0;
+int efx_overwrite_lerp_preset_A = 0;
+int efx_overwrite_lerp_preset_B = 0;
+float efx_overwrite_lerp_alpha = 0;
 
 namespace soundSmoothingParams {
 	float distanceBasedDelayPower = 1.f;
@@ -176,8 +179,14 @@ void CSoundRender_CoreA::set_listener(const CSoundRender_Environment& env)
 			A_CHK(alEffectf(effect, AL_EAXREVERB_DENSITY, env.Density));
 	}
 	if (snd_efx_overwrite > -1) {
-		load_reverb(effect, &reverbs[snd_efx_overwrite]);}
-}
+		load_reverb(effect, &reverbs[snd_efx_overwrite]);
+    }
+    else {
+        if (efx_overwrite_lerp_preset_A > -1) && (efx_overwrite_lerp_preset_B>-1) {
+            load_reverb(effect, &reverbs[efx_overwrite_lerp_preset_A]:lerp(&reverbs[efx_overwrite_lerp_preset_A],&reverbs[efx_overwrite_lerp_preset_B],efx_overwrite_lerp_alpha));
+        }
+    }
+} 
 
 void CSoundRender_CoreA::get_listener(CSoundRender_Environment& env)
 {
