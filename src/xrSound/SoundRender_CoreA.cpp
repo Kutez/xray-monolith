@@ -7,11 +7,10 @@
 
 #include "../xrEngine/pure.h"
 #include "../xrEngine/XR_IOConsole.h"
+#include <AL/efx-presets.h>
 
-int reverb_overwrite = -1;
-int reverb_overwrite_lerp_preset_A = -1;
-int reverb_overwrite_lerp_preset_B = -1;
-float reverb_overwrite_lerp_alpha = 0;
+BOOL reverb_overwrite = FALSE;
+EFXEAXREVERBPROPERTIES psEFXReverbOverwrite = EFX_REVERB_PRESET_GENERIC;
 
 namespace soundSmoothingParams {
 	float distanceBasedDelayPower = 1.f;
@@ -180,15 +179,15 @@ void CSoundRender_CoreA::set_listener(const CSoundRender_Environment& env)
 
     // set reverb_overwrite to -1 to disable the overwrite
 	if (reverb_overwrite > -1) {
-		load_reverb(effect, &reverbs[reverb_overwrite]);
+		load_reverb(effect, &psEFXReverbOverwrite);
     }
-    else {
-        if (reverb_overwrite_lerp_preset_A > -1 && reverb_overwrite_lerp_preset_B>-1) {
-                EFXEAXREVERBPROPERTIES blended;
-                blended.lerp(reverbs[reverb_overwrite_lerp_preset_A], reverbs[reverb_overwrite_lerp_preset_B], reverb_overwrite_lerp_alpha);
-                load_reverb(effect, &blended);
-        }
-    }
+    // else {
+    //     if (reverb_overwrite_lerp_preset_A > -1 && reverb_overwrite_lerp_preset_B>-1) {
+    //             EFXEAXREVERBPROPERTIES blended;
+    //             blended.lerp(reverbs[reverb_overwrite_lerp_preset_A], reverbs[reverb_overwrite_lerp_preset_B], reverb_overwrite_lerp_alpha);
+    //             load_reverb(effect, &blended);
+    //     }
+    // }
 }
 
 void CSoundRender_CoreA::get_listener(CSoundRender_Environment& env)
