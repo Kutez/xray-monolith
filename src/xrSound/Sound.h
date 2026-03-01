@@ -1,3 +1,4 @@
+#include "OpenALDeviceList.h"
 #include <AL/efx-presets.h>
 
 #ifndef SoundH
