@@ -1074,6 +1074,28 @@ void CCC_Register()
 
     // EFX Reverb overwrite
     CMD4(CCC_Float, "snd_efx_reverb_overwrite_density", &psEFXReverbOverwrite.flDensity, 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_diffusion", &psEFXReverbOverwrite.flDiffusion, 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_gain", &psEFXReverbOverwrite.flGain, 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_gainHF", &psEFXReverbOverwrite.flGainHF, 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_gainLF", &psEFXReverbOverwrite.flGainLF, 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_decay_time", &psEFXReverbOverwrite.flDecayTime, 0.1f, 20.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_decay_hf_ratio", &psEFXReverbOverwrite.flDecayHFRatio, 0.1f, 20.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_decay_lf_ratio", &psEFXReverbOverwrite.flDecayLFRatio, 0.1f, 20.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_reflections_gain", &psEFXReverbOverwrite.flReflectionsGain, 0.f, 3.16f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_reflections_delay", &psEFXReverbOverwrite.flReflectionsDelay, 0.f, 0.3f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_reflections_reflections_pan", &psEFXReverbOverwrite.flReflectionsPan[3], 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_late_reverb_gain", &psEFXReverbOverwrite.flLateReverbGain, 0.f, 10.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_late_reverb_delay", &psEFXReverbOverwrite.flLateReverbDelay, 0.f, 0.1f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_reflections_late_reflections_pan", &psEFXReverbOverwrite.flLateReflectionsPan[3], 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_echo_time", &psEFXReverbOverwrite.flEchoTime, 0.075f, 0.25f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_echo_depth", &psEFXReverbOverwrite.flEchoDepth, 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_modulation_time", &psEFXReverbOverwrite.flModulationTime, 0.004f, 4.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_modulation_depth", &psEFXReverbOverwrite.flModulationDepth, 0.f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_air_absorption_gainHF", &psEFXReverbOverwrite.flAirAbsorptionGainHF, 0.892f, 1.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_hf_reference", &psEFXReverbOverwrite.flHFReference, 1000.f, 20000.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_lf_reference", &psEFXReverbOverwrite.flLFReference, 20.f, 1000.f);
+    CMD4(CCC_Float, "snd_efx_reverb_overwrite_room_rolloff_factor", &psEFXReverbOverwrite.flRoomRolloffFactor, 0.f, 10.f);
+    CMD4(CCC_Integer, "snd_efx_reverb_overwrite_decay_hf_limit", &psEFXReverbOverwrite.iDecayHFLimit, FALSE, TRUE);
 #ifdef DEBUG
     CMD3(CCC_Mask, "snd_stats", &g_stats_flags, st_sound);
     CMD3(CCC_Mask, "snd_stats_min_dist", &g_stats_flags, st_sound_min_dist);

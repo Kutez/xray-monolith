@@ -3,6 +3,7 @@
 #include "SoundRender_Core.h"
 #include "OpenALDeviceList.h"
 #include <AL/efx.h>
+#include <AL/efx-presets.h>
 
 
 #ifdef DEBUG
