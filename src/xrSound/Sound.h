@@ -45,6 +45,7 @@ XRSOUND_API extern int psSoundCacheSizeMB;
 XRSOUND_API extern xr_token* snd_devices_token;
 XRSOUND_API extern xr_string snd_device_name;
 
+#include "SoundRender_Environment.h"
 extern EFXEAXREVERBPROPERTIES psEFXReverbOverwrite;
 
 // Flags
