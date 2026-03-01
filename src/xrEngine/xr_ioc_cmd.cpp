@@ -15,6 +15,9 @@
 
 #include "xr_object.h"
 
+#include "SoundRender_Core.h"
+#include "OpenALDeviceList.h"
+#include <AL/efx.h>
 #include <AL/efx-presets.h>
 
 xr_token* vid_quality_token = NULL;
