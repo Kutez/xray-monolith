@@ -15,6 +15,8 @@
 
 #include "xr_object.h"
 
+#include <AL/efx-presets.h>
+
 xr_token* vid_quality_token = NULL;
 
 u32 g_screenmode = 1;
@@ -946,6 +948,7 @@ int scope_2dtexactive = 0.0;
 Fvector3 ssfx_wetness_multiplier = Fvector3().set(1.0f, 0.3f, 0.0f);
 
 extern BOOL reverb_overwrite;
+extern EFXEAXREVERBPROPERTIES psEFXReverbOverwrite;
 // extern int reverb_overwrite_lerp_preset_A;
 // extern int reverb_overwrite_lerp_preset_B;
 // extern float reverb_overwrite_lerp_alpha;

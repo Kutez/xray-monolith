@@ -1,6 +1,3 @@
-#include "OpenALDeviceList.h"
-#include <AL/efx-presets.h>
-
 #ifndef SoundH
 #define SoundH
 #pragma once
@@ -47,9 +44,6 @@ XRSOUND_API extern float psSpeedOfSound;
 XRSOUND_API extern int psSoundCacheSizeMB;
 XRSOUND_API extern xr_token* snd_devices_token;
 XRSOUND_API extern xr_string snd_device_name;
-
-// reverb overwrite
-XRSOUND_API extern EFXEAXREVERBPROPERTIES psEFXReverbOverwrite;
 
 // Flags
 enum
