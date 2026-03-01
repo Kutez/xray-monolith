@@ -1,3 +1,5 @@
+#include <AL/efx-presets.h>
+
 #ifndef SoundH
 #define SoundH
 #pragma once
@@ -46,7 +48,6 @@ XRSOUND_API extern xr_token* snd_devices_token;
 XRSOUND_API extern xr_string snd_device_name;
 
 // reverb overwrite
-#include <AL/efx-presets.h>
 XRSOUND_API extern EFXEAXREVERBPROPERTIES psEFXReverbOverwrite;
 
 // Flags
