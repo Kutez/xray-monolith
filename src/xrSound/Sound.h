@@ -46,6 +46,7 @@ XRSOUND_API extern xr_token* snd_devices_token;
 XRSOUND_API extern xr_string snd_device_name;
 
 // reverb overwrite
+#include "efx-presets.h"
 XRSOUND_API extern EFXEAXREVERBPROPERTIES psEFXReverbOverwrite;
 
 // Flags
