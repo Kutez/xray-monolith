@@ -203,27 +203,27 @@ void CSoundRender_CoreA::set_listener(const CSoundRender_Environment& env)
 
     // set reverb_overwrite to -1 to disable the overwrite
 	if (reverb_overwrite) {
-		A_CHK(alEffectf(effect_, AL_EAXREVERB_DENSITY, psReverbDensity));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_DIFFUSION, psReverbDiffusion));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_GAIN, psReverbGain));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_GAINHF, psReverbGainHF));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_GAINLF, psReverbGainLF));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_DECAY_TIME, psReverbDecayTime));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_DECAY_HFRATIO, psReverbDecayHFRatio));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_DECAY_LFRATIO, psReverbDecayLFRatio));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_REFLECTIONS_GAIN, psReverbReflectionsGain));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_REFLECTIONS_DELAY, psReverbReflectionsDelay));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_LATE_REVERB_GAIN, psReverbLateReverbGain));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_LATE_REVERB_DELAY, psReverbLateReverbDelay));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_ECHO_TIME, psReverbEchoTime));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_ECHO_DEPTH, psReverbEchoDepth));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_MODULATION_TIME, psReverbModulationTime));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_MODULATION_DEPTH, psReverbModulationDepth));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_AIR_ABSORPTION_GAINHF, psReverbAirAbsorptionGainHF));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_HFREFERENCE, psReverbHFReference));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_LFREFERENCE, psReverbLFReference));
-        A_CHK(alEffectf(effect_, AL_EAXREVERB_ROOM_ROLLOFF_FACTOR, psReverbRoomRolloffFactor));
-        A_CHK(alEffecti(effect_, AL_EAXREVERB_DECAY_HFLIMIT, psReverbDecayHFLimit));
+		A_CHK(alEffectf(effect, AL_EAXREVERB_DENSITY, psReverbDensity));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_DIFFUSION, psReverbDiffusion));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_GAIN, psReverbGain));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_GAINHF, psReverbGainHF));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_GAINLF, psReverbGainLF));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_DECAY_TIME, psReverbDecayTime));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_DECAY_HFRATIO, psReverbDecayHFRatio));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_DECAY_LFRATIO, psReverbDecayLFRatio));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_REFLECTIONS_GAIN, psReverbReflectionsGain));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_REFLECTIONS_DELAY, psReverbReflectionsDelay));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_LATE_REVERB_GAIN, psReverbLateReverbGain));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_LATE_REVERB_DELAY, psReverbLateReverbDelay));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_ECHO_TIME, psReverbEchoTime));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_ECHO_DEPTH, psReverbEchoDepth));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_MODULATION_TIME, psReverbModulationTime));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_MODULATION_DEPTH, psReverbModulationDepth));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_AIR_ABSORPTION_GAINHF, psReverbAirAbsorptionGainHF));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_HFREFERENCE, psReverbHFReference));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_LFREFERENCE, psReverbLFReference));
+        A_CHK(alEffectf(effect, AL_EAXREVERB_ROOM_ROLLOFF_FACTOR, psReverbRoomRolloffFactor));
+        A_CHK(alEffecti(effect, AL_EAXREVERB_DECAY_HFLIMIT, psReverbDecayHFLimit));
     }
 }
 
