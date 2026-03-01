@@ -46,37 +46,29 @@ XRSOUND_API extern xr_token* snd_devices_token;
 XRSOUND_API extern xr_string snd_device_name;
 
 // reverb overwrite
-#ifndef EFXEAXREVERBPROPERTIES_DEFINED
-#define EFXEAXREVERBPROPERTIES_DEFINED
-typedef struct EFXEAXREVERBPROPERTIES_s {
-    float flDensity;
-    float flDiffusion;
-    float flGain;
-    float flGainHF;
-    float flGainLF;
-    float flDecayTime;
-    float flDecayHFRatio;
-    float flDecayLFRatio;
-    float flReflectionsGain;
-    float flReflectionsDelay;
-    float flReflectionsPan[3];
-    float flLateReverbGain;
-    float flLateReverbDelay;
-    float flLateReverbPan[3];
-    float flEchoTime;
-    float flEchoDepth;
-    float flModulationTime;
-    float flModulationDepth;
-    float flAirAbsorptionGainHF;
-    float flHFReference;
-    float flLFReference;
-    float flRoomRolloffFactor;
-    int   iDecayHFLimit;
-
-} EFXEAXREVERBPROPERTIES, *LPEFXEAXREVERBPROPERTIES;
-#endif
-
-extern EFXEAXREVERBPROPERTIES psEFXReverbOverwrite;
+extern float psReverbDensity;
+extern float psReverbDiffusion;
+extern float psReverbGain;
+extern float psReverbGainHF;
+extern float psReverbGainLF;
+extern float psReverbDecayTime;
+extern float psReverbDecayHFRatio;
+extern float psReverbDecayLFRatio;
+extern float psReverbReflectionsGain;
+extern float psReverbReflectionsDelay;
+extern float psReverbReflectionsPan;
+extern float psReverbLateReverbGain;
+extern float psReverbLateReverbDelay;
+extern float psReverbLateReflectionsPan;
+extern float psReverbEchoTime;
+extern float psReverbEchoDepth;
+extern float psReverbModulationTime;
+extern float psReverbModulationDepth;
+extern float psReverbAirAbsorptionGainHF;
+extern float psReverbHFReference;
+extern float psReverbLFReference;
+extern float psReverbRoomRolloffFactor;
+extern BOOL   psReverbDecayHFLimit;
 
 // Flags
 enum

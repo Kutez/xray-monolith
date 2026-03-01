@@ -8,8 +8,33 @@
 #include "../xrEngine/pure.h"
 #include "../xrEngine/XR_IOConsole.h"
 
+#include <AL/efx-presets.h>
+
+#include <AL/efx.h>
+
 BOOL reverb_overwrite = FALSE;
-EFXEAXREVERBPROPERTIES psEFXReverbOverwrite = EFX_REVERB_PRESET_GENERIC;
+
+float psReverbDensity                = AL_EAXREVERB_DEFAULT_DENSITY;
+float psReverbDiffusion              = AL_EAXREVERB_DEFAULT_DIFFUSION;
+float psReverbGain                   = AL_EAXREVERB_DEFAULT_GAIN;
+float psReverbGainHF                 = AL_EAXREVERB_DEFAULT_GAINHF;
+float psReverbGainLF                 = AL_EAXREVERB_DEFAULT_GAINLF;
+float psReverbDecayTime              = AL_EAXREVERB_DEFAULT_DECAY_TIME;
+float psReverbDecayHFRatio           = AL_EAXREVERB_DEFAULT_DECAY_HFRATIO;
+float psReverbDecayLFRatio           = AL_EAXREVERB_DEFAULT_DECAY_LFRATIO;
+float psReverbReflectionsGain        = AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN;
+float psReverbReflectionsDelay       = AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY;
+float psReverbLateReverbGain         = AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN;
+float psReverbLateReverbDelay        = AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY;
+float psReverbEchoTime               = AL_EAXREVERB_DEFAULT_ECHO_TIME;
+float psReverbEchoDepth              = AL_EAXREVERB_DEFAULT_ECHO_DEPTH;
+float psReverbModulationTime         = AL_EAXREVERB_DEFAULT_MODULATION_TIME;
+float psReverbModulationDepth        = AL_EAXREVERB_DEFAULT_MODULATION_DEPTH;
+float psReverbAirAbsorptionGainHF    = AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF;
+float psReverbHFReference            = AL_EAXREVERB_DEFAULT_HFREFERENCE;
+float psReverbLFReference            = AL_EAXREVERB_DEFAULT_LFREFERENCE;
+float psReverbRoomRolloffFactor      = AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR;
+BOOL  psReverbDecayHFLimit           = AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT;
 
 namespace soundSmoothingParams {
 	float distanceBasedDelayPower = 1.f;
@@ -177,16 +202,29 @@ void CSoundRender_CoreA::set_listener(const CSoundRender_Environment& env)
 	}
 
     // set reverb_overwrite to -1 to disable the overwrite
-	if (reverb_overwrite > -1) {
-		load_reverb(effect, &psEFXReverbOverwrite);
+	if (reverb_overwrite) {
+		A_CHK(alEffectf(effect_, AL_EAXREVERB_DENSITY, psReverbDensity));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_DIFFUSION, psReverbDiffusion));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_GAIN, psReverbGain));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_GAINHF, psReverbGainHF));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_GAINLF, psReverbGainLF));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_DECAY_TIME, psReverbDecayTime));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_DECAY_HFRATIO, psReverbDecayHFRatio));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_DECAY_LFRATIO, psReverbDecayLFRatio));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_REFLECTIONS_GAIN, psReverbReflectionsGain));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_REFLECTIONS_DELAY, psReverbReflectionsDelay));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_LATE_REVERB_GAIN, psReverbLateReverbGain));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_LATE_REVERB_DELAY, psReverbLateReverbDelay));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_ECHO_TIME, psReverbEchoTime));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_ECHO_DEPTH, psReverbEchoDepth));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_MODULATION_TIME, psReverbModulationTime));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_MODULATION_DEPTH, psReverbModulationDepth));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_AIR_ABSORPTION_GAINHF, psReverbAirAbsorptionGainHF));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_HFREFERENCE, psReverbHFReference));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_LFREFERENCE, psReverbLFReference));
+        A_CHK(alEffectf(effect_, AL_EAXREVERB_ROOM_ROLLOFF_FACTOR, psReverbRoomRolloffFactor));
+        A_CHK(alEffecti(effect_, AL_EAXREVERB_DECAY_HFLIMIT, psReverbDecayHFLimit));
     }
-    // else {
-    //     if (reverb_overwrite_lerp_preset_A > -1 && reverb_overwrite_lerp_preset_B>-1) {
-    //             EFXEAXREVERBPROPERTIES blended;
-    //             blended.lerp(reverbs[reverb_overwrite_lerp_preset_A], reverbs[reverb_overwrite_lerp_preset_B], reverb_overwrite_lerp_alpha);
-    //             load_reverb(effect, &blended);
-    //     }
-    // }
 }
 
 void CSoundRender_CoreA::get_listener(CSoundRender_Environment& env)
