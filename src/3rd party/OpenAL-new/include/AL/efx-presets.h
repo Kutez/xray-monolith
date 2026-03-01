@@ -30,8 +30,6 @@ typedef struct EFXEAXREVERBPROPERTIES_s {
     float flRoomRolloffFactor;
     int   iDecayHFLimit;
 
-    void lerp(const EFXEAXREVERBPROPERTIES_s& A, const EFXEAXREVERBPROPERTIES_s& B, float f);
-
 } EFXEAXREVERBPROPERTIES, *LPEFXEAXREVERBPROPERTIES;
 #endif
 
